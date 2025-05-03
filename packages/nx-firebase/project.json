@@ -2,6 +2,7 @@
   "name": "nx-firebase",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/nx-firebase/src",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@nx/js:tsc",
@@ -46,10 +47,8 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/packages/nx-firebase"],
       "options": {
-        "jestConfig": "packages/nx-firebase/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "packages/nx-firebase/jest.config.ts"
       }
     }
-  },
-  "tags": []
+  }
 }
