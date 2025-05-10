@@ -45,3 +45,6 @@ e2e.log
 .nx/workspace-data
 
 .nx-firebase
+
+vite.config.*.timestamp*
+vitest.config.*.timestamp*

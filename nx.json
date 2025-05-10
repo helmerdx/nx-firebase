@@ -27,6 +27,12 @@
           "codeCoverage": true
         }
       }
+    },
+    "@nx/vite:test": {
+      "cache": true,
+      "options": {
+        "passWithNoTests": true
+      }
     }
   },
   "namedInputs": {

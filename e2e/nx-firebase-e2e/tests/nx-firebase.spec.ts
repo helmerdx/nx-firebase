@@ -23,9 +23,6 @@ import { testMigrate } from './test-migrate'
  */
 process.env['CI'] = 'true'
 
-const JEST_TIMEOUT = 190000
-jest.setTimeout(JEST_TIMEOUT)
-
 // NOTE: If one e2e test fails, cleanup fails, so all subsequent tests will fail.
 
 // DONE
@@ -73,7 +70,7 @@ describe('nx-firebase e2e', () => {
     })
     // ensure daemon is off for e2e test
     runNxCommandAsync('reset')
-  }, JEST_TIMEOUT)
+  }, 19_000)
 
   afterAll(() => {
     // `nx reset` kills the daemon, and performs
