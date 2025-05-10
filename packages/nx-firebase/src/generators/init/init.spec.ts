@@ -5,6 +5,7 @@ import { packageVersions } from '../../__generated__/nx-firebase-versions'
 import { initGenerator } from './init'
 import { gitIgnoreRules, nxIgnoreRules } from './lib'
 import { workspaceNxVersion } from '../../utils'
+import { vi } from 'vitest'
 
 describe('init generator', () => {
   let tree: Tree
@@ -13,7 +14,7 @@ describe('init generator', () => {
     tree = createTreeWithEmptyWorkspace({
       layout: 'apps-libs',
     })
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   it('should add .gitignore rules', async () => {
@@ -135,22 +136,4 @@ describe('init generator', () => {
     const nxVersion = workspaceNxVersion.version
     expect(packageJson.devDependencies['@nx/node']).toBe(nxVersion)
   })
-
-  // describe('--skipFormat', () => {
-  //   it('should format files by default', async () => {
-  //     jest.spyOn(devkit, 'formatFiles')
-
-  //     await initGenerator(tree, {})
-
-  //     expect(devkit.formatFiles).toHaveBeenCalled()
-  //   })
-
-  //   it('should not format files when --skipFormat=true', async () => {
-  //     jest.spyOn(devkit, 'formatFiles')
-
-  //     await initGenerator(tree, { skipFormat: true })
-
-  //     expect(devkit.formatFiles).not.toHaveBeenCalled()
-  //   })
-  // })
 })
